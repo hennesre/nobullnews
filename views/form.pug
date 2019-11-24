@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  -data = data || {}
+
+  if errors
+    ul
+      for error in errors
+        li= error.msg
+
+  form(action="." method="POST")
+    label(for="term") Keyword:
+    input(
+      type="text"
+      id="term"
+      name="term"
+      class="form-control"
+      value=data.name
+    )
+    br
+
+    label(for="category") Category:
+    br
+    select(
+      name="category",
+      id="category"
+      class="select-picker"
+      value=data.name
+    )
+      option(value='technology') Technology
+      option(value='indicator') Indicator
+    br
+    br
+
+    input(
+      type="submit"
+      value="Submit"
+      class="btn btn-lg btn-primary btn-block"
+    )
