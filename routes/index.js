@@ -11,12 +11,21 @@ const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
-router.get('/', auth.connect(basic), (req, res) => {
+router.get('/', (req, res) => {
+  Document.find()
+    .then((documents) => {
+      res.render('feed', { title: 'Haystack', documents });
+    })
+    .catch(() => { res.send('Sorry! Something went wrong.'); });
+});
+
+
+router.get('/addition', auth.connect(basic), (req, res) => {
   res.render('form', {title: 'Newsletter Form'});
 });
 
 router.post(
-  '/',
+  '/addition',
   [
     body('term')
       .isLength({ min: 1})
@@ -50,13 +59,7 @@ router.get('/keywords', (req, res) => {
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
-router.get('/feed', (req, res) => {
-  Document.find()
-    .then((documents) => {
-      res.render('feed', { title: 'Your News Feed', documents });
-    })
-    .catch(() => { res.send('Sorry! Something went wrong.'); });
-});
+
 
 module.exports = router;
 
