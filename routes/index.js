@@ -49,6 +49,14 @@ router.get('/keywords', (req, res) => {
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
+router.get('/documents', (req, res) => {
+  Document.find()
+    .then((documents) => {
+      res.render('index', { title: 'Your News Feed', documents });
+    })
+    .catch(() => { res.send('Sorry! Something went wrong.'); });
+});
+
 module.exports = router;
 
 

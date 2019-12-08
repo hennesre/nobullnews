@@ -1,0 +1,18 @@
+extends layout2
+
+block content
+
+    if documents.length
+        table.listing-table.table-dark.table-striped
+            tr
+                th Source
+                th Title
+                th Date
+            each document in documents
+                tr
+                    td= document.source
+                    td= document.title
+                    td= document.date
+    else
+        p No news yet :(
+
