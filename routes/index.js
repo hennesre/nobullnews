@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 
 const router = express.Router();
 const Keyword = mongoose.model('Keywords');
+const Document = mongoose.model('Documents');
 const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
@@ -49,7 +50,7 @@ router.get('/keywords', (req, res) => {
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
-router.get('/documents', (req, res) => {
+router.get('/feed', (req, res) => {
   Document.find()
     .then((documents) => {
       res.render('index', { title: 'Your News Feed', documents });
