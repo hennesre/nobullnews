@@ -27,3 +27,24 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Users', userSchema)
+
+const documentSchema = new mongoose.Schema({
+    source: {
+        type: String,
+        trim: true,
+    },
+    logo: {
+        type: String,
+        trim: true,
+    },
+    title: {
+        type: String,
+        trim: true,
+    },
+    date: {
+        type: Date,
+        trim: true,
+    },
+});
+
+module.exports = mongoose.model('Documents', documentSchema);
