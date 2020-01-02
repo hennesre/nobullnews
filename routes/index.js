@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/addition', auth.connect(basic), (req, res) => {
-  res.render('form', {title: 'Newsletter Form'});
+  res.render('form', {title: 'Haystack News'});
 });
 
 router.post(
