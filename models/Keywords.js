@@ -13,7 +13,7 @@ const keywordSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Keywords', keywordSchema);
+module.exports = mongoose.model('keywords', keywordSchema);
 
 const userSchema = new mongoose.Schema({
     email: {
