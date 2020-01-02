@@ -1,0 +1,9 @@
+git add .
+
+git commit "message"
+
+git push heroku master
+
+git push origin master
+
+heroku open
