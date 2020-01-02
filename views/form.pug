@@ -10,8 +10,8 @@ block content
       for error in errors
         li= error.msg
 
-  form(action="." method="POST")
-    label(for="addition") Keyword:
+  form(action="/addition" method="POST")
+    label(for="keyword") Keyword:
     input(
       type="text"
       id="keyword"
