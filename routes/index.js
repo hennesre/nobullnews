@@ -81,6 +81,31 @@ router.get('/datapull', auth.connect(basic), (req, res) => {
   res.render('pull', {title: 'Data Pull'});
 });
 
+const button = document.getElementById('triggerDataPull');
+button.addEventListener('click', function(pullData) {
+  console.log('button was clicked');
+        newsapi.v2.everything({
+          qInTitle: 'crypto AND (ethereum OR litecoin) NOT bitcoin',
+          from: fromDate,
+          to: toDate,
+          language: 'en',
+          sortBy: 'relevancy',
+        }).then(response => {
+          console.log(response);
+          document = response;
+        });
+      const errors = validationResult(req);
+      if (errors.isEmpty()) {
+      const document = new Document(req.body);
+      document.save()
+        .then(() => { res.send('Thank you for the new document!'); })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
+      } else {
+      console.log(req.body);
+    }
+  });
+
+/*
 router.post(
   '/datapull',
   (req, res) => {
@@ -105,6 +130,7 @@ router.post(
     }
   }
 );
+*/
 
 module.exports = router;
 
