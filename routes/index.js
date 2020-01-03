@@ -5,7 +5,7 @@ const auth = require('http-auth');
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const Keyword = mongoose.model('keywords');
-const Document = mongoose.model('documents');
+const Article = mongoose.model('articles');
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('c89d944198e843f1892491c6e51896ce');
 
@@ -31,9 +31,9 @@ const basic = auth.basic({
 });
 
 router.get('/', (req, res) => {
-  Document.find()
-    .then((documents) => {
-      res.render('feed', { title: 'Haystack', documents });
+  Article.find()
+    .then((articles) => {
+      res.render('feed', { title: 'Haystack', articles });
     })
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
@@ -92,13 +92,13 @@ button.addEventListener('click', function(pullData) {
           sortBy: 'relevancy',
         }).then(response => {
           console.log(response);
-          document = response;
+          article = response;
         });
       const errors = validationResult(req);
       if (errors.isEmpty()) {
-      const document = new Document(req.body);
-      document.save()
-        .then(() => { res.send('Thank you for the new document!'); })
+      const article = new Article(req.body);
+      article.save()
+        .then(() => { res.send('Thank you for the new data pull!'); })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
       } else {
       console.log(req.body);
@@ -117,13 +117,13 @@ router.post(
           sortBy: 'relevancy',
       }).then(response => {
           console.log(response);
-          document = response;
+          article = response;
       });
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      const document = new Document(req.body);
-      document.save()
-        .then(() => { res.send('Thank you for the new document!'); })
+      const article = new Article(req.body);
+      article.save()
+        .then(() => { res.send('Thank you for the new data pull!'); })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
     } else {
       console.log(req.body);

@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Users', userSchema)
 
-const documentSchema = new mongoose.Schema({
+const articleSchema = new mongoose.Schema({
     source: {
         type: String,
         trim: true,
@@ -48,4 +48,4 @@ const documentSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('documents', documentSchema);
+module.exports = mongoose.model('articles', articleSchema);

@@ -3,19 +3,19 @@ extends layout2
 block content
   h1 Haystack News
 
-    if documents.length
+    if articles.length
         table.listing-table.table-dark.table-striped
             tr
                 th Source
                 th Title
                 th Date
                 th Link
-            each document in documents
+            each article in articles
                 tr
-                    td= document.source
-                    td= document.title
-                    td= document.date
-                    td= document.link
+                    td= article.source.name
+                    td= article.title
+                    td= article.date
+                    td= article.link
     else
         p No news yet :(
 
