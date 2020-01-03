@@ -45,9 +45,9 @@ router.get('/addition', auth.connect(basic), (req, res) => {
 router.post(
   '/addition',
   [
-    body('keyword')
+    body('term')
       .isLength({ min: 1})
-      .withMessage('Please enter a keyword'),
+      .withMessage('Please enter a technology or indicator term'),
     body('category')
   ],
   (req, res) => {

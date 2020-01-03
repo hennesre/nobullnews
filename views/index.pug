@@ -6,11 +6,11 @@ h1 Keyword List
     if keywords.length
         table.listing-table.table-dark.table-striped
             tr
-                th Term
+                th Keyword
                 th Category
             each keyword in keywords
                 tr
-                    td= keyword.term
+                    td= keyword.keyword
                     td= keyword.category
     else
         p No keywords yet :(

@@ -11,13 +11,13 @@ block content
         li= error.msg
 
   form(action="/addition" method="POST")
-    label(for="keyword") Keyword:
+    label(for="term") Keyword:
     input(
       type="text"
-      id="keyword"
-      name="keyword"
+      id="term"
+      name="term"
       class="form-control"
-      value=data.keyword
+      value=data.term
     )
     br
 
