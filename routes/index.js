@@ -81,6 +81,7 @@ router.get('/datapull', auth.connect(basic), (req, res) => {
   res.render('pull', {title: 'Data Pull'});
 });
 
+/*
 const button = document.getElementById('triggerDataPull');
 button.addEventListener('click', function(pullData) {
   console.log('button was clicked');
@@ -104,8 +105,8 @@ button.addEventListener('click', function(pullData) {
       console.log(req.body);
     }
   });
+*/
 
-/*
 router.post(
   '/datapull',
   (req, res) => {
@@ -130,7 +131,6 @@ router.post(
     }
   }
 );
-*/
 
 module.exports = router;
 
