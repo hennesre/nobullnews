@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('mongoose-type-url');
 
 const keywordSchema = new mongoose.Schema({
     term: {
@@ -33,10 +34,6 @@ const documentSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
-    logo: {
-        type: String,
-        trim: true,
-    },
     title: {
         type: String,
         trim: true,
@@ -45,6 +42,10 @@ const documentSchema = new mongoose.Schema({
         type: Date,
         trim: true,
     },
+    link: {
+        work: mongoose.SchemaTypes.Url,
+        profile: mongoose.SchemaTypes.Url
+    }
 });
 
 module.exports = mongoose.model('documents', documentSchema);

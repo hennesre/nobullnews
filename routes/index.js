@@ -77,6 +77,10 @@ router.get('/keywords', (req, res) => {
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
+router.get('/datapull', auth.connect(basic), (req, res) => {
+  res.render('pull', {title: 'Data Pull'});
+});
+
 router.post(
   '/datapull',
   (req, res) => {

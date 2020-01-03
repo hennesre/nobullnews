@@ -9,11 +9,13 @@ block content
                 th Source
                 th Title
                 th Date
+                th Link
             each document in documents
                 tr
                     td= document.source
                     td= document.title
                     td= document.date
+                    td= document.link
     else
         p No news yet :(
 
