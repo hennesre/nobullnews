@@ -16,6 +16,7 @@
     "express-validator": "^6.3.0",
     "http-auth": "^3.2.4",
     "mongoose": "^5.7.12",
+    "mongoose-type-url": "^1.0.6",
     "newsapi": "^2.4.0",
     "pug": "^2.0.4",
     "readline-sync": "^1.4.10"
