@@ -5,7 +5,7 @@ const auth = require('http-auth');
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const Keyword = mongoose.model('keywords');
-const Document = mongoose.model('Documents');
+const Document = mongoose.model('documents');
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('c89d944198e843f1892491c6e51896ce');
 
