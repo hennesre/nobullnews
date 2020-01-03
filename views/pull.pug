@@ -1,14 +1,17 @@
 extends layout2
-
 block content
   h1 Data Pull
-  
   -data = data || {}
-
   if errors
     ul
       for error in errors
         li= error.msg
-  button(type='button' class='c-btn-blue c-btn-circle c-btn-uppercase' value="Click Me" onclick='pullData')
+  form(action="/datapull" method="POST")
+    input(
+        type="submit"
+        value="Submit"
+        class="btn btn-lg btn-primary btn-block"
+        )
+  
 
     

@@ -107,18 +107,6 @@ button.addEventListener('click', function(pullData) {
   });
 */
 
-function pullData() {
-    newsapi.v2.everything({
-      qInTitle: 'crypto AND (ethereum OR litecoin) NOT bitcoin',
-      from: fromDate,
-      to: toDate,
-      language: 'en',
-      sortBy: 'relevancy',
-  }).then(response => {
-      console.log(response);
-});
-}
-
 router.post(
   '/datapull',
   (req, res) => {
