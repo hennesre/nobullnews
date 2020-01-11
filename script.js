@@ -1,11 +1,8 @@
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('c89d944198e843f1892491c6e51896ce');
-
-/*
-require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect('mongodb://heroku_1nn17hwr:nm6jof55noo9f65qlj8m9fo83p@ds253428.mlab.com:53428/heroku_1nn17hwr', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -13,12 +10,12 @@ mongoose.connect(process.env.DATABASE, {
 mongoose.Promise = global.Promise;
 mongoose.connection
   .on('connected', () => {
-    console.log(`Mongoose connection open on ${process.env.DATABASE}`);
+    console.log(`Mongoose connection open on ${'mongodb://heroku_1nn17hwr:nm6jof55noo9f65qlj8m9fo83p@ds253428.mlab.com:53428/heroku_1nn17hwr'}`);
   })
   .on('error', (err) => {
     console.log(`Connection error: ${err.message}`);
 });
-*/
+
 
 var today = new Date();
 var lastWeek = new Date();
