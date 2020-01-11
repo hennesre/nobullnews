@@ -1,5 +1,7 @@
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('c89d944198e843f1892491c6e51896ce');
+
+/*
 require('dotenv').config();
 const mongoose = require('mongoose');
 
@@ -16,6 +18,7 @@ mongoose.connection
   .on('error', (err) => {
     console.log(`Connection error: ${err.message}`);
 });
+*/
 
 var today = new Date();
 var lastWeek = new Date();
@@ -34,6 +37,10 @@ let oldYear = lastWeek.getFullYear();
 let fromDate = oldYear + "-" + oldMonth + "-" + oldDate
 let toDate = nowYear + "-" + nowMonth + "-" + nowDate
 
+console.log(fromDate);
+console.log(toDate);
+
+/*
 newsapi.v2.everything({
     qInTitle: 'crypto AND (ethereum OR litecoin) NOT bitcoin',
     from: fromDate,
@@ -45,3 +52,4 @@ newsapi.v2.everything({
     article = response;
 });
 
+*/
