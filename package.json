@@ -18,7 +18,7 @@
     "mongoose": "^5.7.12",
     "mongoose-type-url": "^1.0.6",
     "newsapi": "^2.4.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
